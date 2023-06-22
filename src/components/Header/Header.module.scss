@@ -16,7 +16,8 @@
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		gap: 1rem li {
+		gap: 1rem;
+		li {
 			transition: var(--main-transition);
 			font-size: 1.5rem;
 		}

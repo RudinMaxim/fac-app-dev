@@ -1,3 +1,9 @@
+import StartingSection from '@/modules/StartingSection/StartingSection';
+
 export default function Home() {
-	return <main></main>;
+	return (
+		<main>
+			<StartingSection />
+		</main>
+	);
 }

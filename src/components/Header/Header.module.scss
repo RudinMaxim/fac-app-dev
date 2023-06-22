@@ -1,0 +1,30 @@
+.Header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	.logo {
+		font-size: 2rem;
+		line-height: 2;
+		font-weight: 700;
+	}
+}
+.NavBar {
+	ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1rem li {
+			transition: var(--main-transition);
+			font-size: 1.5rem;
+		}
+
+		a {
+			&:hover {
+				color: var(--main-color);
+			}
+		}
+	}
+}

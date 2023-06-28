@@ -2,9 +2,8 @@ import Link from 'next/link';
 import NavBar from './components/NavBar';
 
 import style from './Header.module.scss';
-import Search from './components/SearchInput';
 import Localization from './components/Localization';
-
+import Linked from '@/UI/Link/Linked';
 export default function Header() {
 	return (
 		<header className={style.Header}>
@@ -12,9 +11,9 @@ export default function Header() {
 				ФАЦ ПГМУ
 			</Link>
 			<NavBar />
-			<div>
-				<Search />
+			<div className={style.rightSide}>
 				<Localization />
+				<Linked href={'/Contact'}>wdawd</Linked>
 			</div>
 		</header>
 	);

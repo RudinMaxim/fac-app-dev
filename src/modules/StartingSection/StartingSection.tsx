@@ -1,7 +1,9 @@
+'use client';
 import Button from '@/UI/Button/Button';
 import style from './StartingSection.module.scss';
 import illustrations from '../../assets/illustrations/Diagnosis.svg';
 import Image from 'next/image';
+
 export default function StartingSection() {
 	return (
 		<section className={style.StartingSection}>

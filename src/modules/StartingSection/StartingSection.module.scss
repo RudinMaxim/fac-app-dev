@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
+	min-height: 800px;
 
 	.column {
 		max-width: 45%;
@@ -15,10 +16,5 @@
 			font-size: 1.25rem;
 			margin-bottom: 2rem;
 		}
-	}
-
-	.mark {
-		color: var(--main-color);
-		font-weight: 600;
 	}
 }

@@ -5,7 +5,8 @@
 	color: #000000;
 	background-color: #ffffff;
 
-	--main-color: #d30037;
+	--main-color-red: #b62f45;
+	--main-color-gray: #d5dbd8;
 	--main-transition: 2.3s all;
 
 	text-rendering: optimizeLegibility;
@@ -43,4 +44,13 @@ html {
 }
 section {
 	padding: 50px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'BOWLER', sans-serif;
 }

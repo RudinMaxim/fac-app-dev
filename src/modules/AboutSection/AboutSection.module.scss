@@ -1,0 +1,13 @@
+.AboutSection {
+}
+.timeline {
+	list-style-type: none;
+	padding: 0;
+	position: relative;
+
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+}

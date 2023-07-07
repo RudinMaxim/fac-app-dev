@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import style from '../Header.module.scss';
+
 interface Link {
 	id: number;
 	title: string;
@@ -18,12 +19,12 @@ const links: Link[] = [
 	},
 	{
 		id: 3,
-		title: 'Контакт',
-		url: '/Contact',
+		title: 'Товары',
+		url: '/Sale',
 	},
 ];
 
-export default function NavBar() {
+export default function NavBar(): React.JSX.Element {
 	return (
 		<nav className={style.NavBar}>
 			<ul>

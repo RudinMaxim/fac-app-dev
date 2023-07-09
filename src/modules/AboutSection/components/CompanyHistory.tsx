@@ -5,10 +5,10 @@ import { history } from '../data';
 export default function CompanyHistory(): React.JSX.Element {
 	return (
 		<div>
-			<h2>История ФАЦ</h2>
+			<h3>История ФАЦ</h3>
 			<ul className={style.timeline}>
-				{history.map((item, index) => (
-					<li key={index}>
+				{history.map((item) => (
+					<li key={item.key}>
 						<span>{item.date}</span>
 						<p>{item.event}</p>
 					</li>

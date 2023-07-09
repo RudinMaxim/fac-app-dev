@@ -19,7 +19,7 @@ export default function StartingSection() {
 				<div className={style.column}>
 					<Image
 						src={illustrations}
-						width={600}
+						width={500}
 						height={600}
 						alt='Picture of the author'
 					/>

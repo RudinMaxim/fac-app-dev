@@ -7,9 +7,10 @@ export default function Possibilities() {
 	return (
 		<div className={style.Possibilities}>
 			{possibilities.map((date) => (
-				<div key={date.id}>
+				<div key={date.id} className={style.card}>
 					<Image src={date.src} alt={date.title} width={100} height={100} />
-					<h3>{date.title}</h3>
+
+					<h4>{date.title}</h4>
 					<p>{date.subtitle}</p>
 				</div>
 			))}

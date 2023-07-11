@@ -16,14 +16,14 @@ export default function StartingSection() {
 					</p>
 					<Button>Записатся </Button>
 				</div>
-				<div className={style.column}>
+				{/* <div className={style.column}>
 					<Image
 						src={illustrations}
 						width={500}
 						height={600}
 						alt='Picture of the author'
 					/>
-				</div>
+				</div> */}
 			</section>
 		</div>
 	);

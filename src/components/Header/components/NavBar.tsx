@@ -1,36 +1,20 @@
-import Link from 'next/link';
+import React from 'react';
 import style from '../Header.module.scss';
 
-interface Link {
-	id: number;
-	title: string;
-	url: string;
-}
-const links: Link[] = [
-	{
-		id: 1,
-		title: 'Главная',
-		url: '/',
-	},
-	{
-		id: 2,
-		title: 'Информация',
-		url: '/Information',
-	},
-	{
-		id: 3,
-		title: 'Товары',
-		url: '/Sale',
-	},
-];
+import Link from 'next/link';
+import { links } from '../data';
 
-export default function NavBar(): React.JSX.Element {
+interface NavBarProps {
+	onMenuToggle: () => void;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ onMenuToggle }) => {
 	return (
 		<nav className={style.NavBar}>
 			<ul>
 				{links.map((link) => (
 					<li key={link.id}>
-						<Link key={link.id} href={link.url}>
+						<Link key={link.id} href={link.url} onClick={onMenuToggle}>
 							{link.title}
 						</Link>
 					</li>
@@ -38,4 +22,5 @@ export default function NavBar(): React.JSX.Element {
 			</ul>
 		</nav>
 	);
-}
+};
+export default NavBar;

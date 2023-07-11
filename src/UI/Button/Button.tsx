@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import style from './Button.module.scss';
 export interface ButtonProps {
 	children: React.ReactNode;

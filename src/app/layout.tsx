@@ -23,7 +23,7 @@ export default function RootLayout({
 			<body className={open_Sans.className}>
 				<Header />
 				{children}
-				<Footer />
+				{/* <Footer /> */}
 			</body>
 		</html>
 	);

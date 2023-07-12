@@ -1,22 +1,41 @@
-interface Link {
-	id: number;
+interface ILinkNav {
 	title: string;
 	url: string;
 }
-export const links: Link[] = [
+export const ILinkNav: ILinkNav[] = [
 	{
-		id: 1,
 		title: 'Главная',
 		url: '/',
 	},
 	{
-		id: 2,
 		title: 'Информация',
 		url: '/Information',
 	},
 	{
-		id: 3,
 		title: 'Товары',
 		url: '/Sale',
+	},
+];
+interface ILinkSocial {
+	title: string;
+	url: string;
+	Type?: TypeLink;
+}
+export enum TypeLink {
+	tel = 'tel:',
+	mailto = 'mailto:',
+	normal = '',
+}
+
+export const ILinkSocial: ILinkSocial[] = [
+	{
+		title: 'Vk',
+		url: 'https://vk.com/fca_perm',
+		Type: TypeLink.normal,
+	},
+	{
+		title: '@',
+		url: 'https://vk.com/fca_perm',
+		Type: TypeLink.mailto,
 	},
 ];

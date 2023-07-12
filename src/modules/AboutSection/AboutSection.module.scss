@@ -1,38 +1,7 @@
 .AboutSection {
-	h2 {
-		color: var(--main-color-red);
-	}
-	.text {
-		margin: 1.5rem 0px;
-	}
 }
 
 .Possibilities {
-	display: flex;
-	justify-content: space-between;
-	margin: 20px 0;
-
-	.card {
-		background-color: var(--main-color-gray);
-
-		min-width: 20%;
-		margin-right: 1.5rem;
-		padding: 1rem 2rem;
-		border-radius: 0.5rem;
-
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		flex-wrap: wrap;
-
-		img {
-			margin-bottom: 0.5rem;
-		}
-
-		&:last-child {
-			margin: 0;
-		}
-	}
 }
 
 .timeline {

@@ -1,7 +1,5 @@
 import style from './StartingSection.module.scss';
-import Button from '@/UI/Button/Button';
 import illustrations from '../../assets/illustrations/Diagnosis.svg';
-
 import Image from 'next/image';
 
 export default function StartingSection() {
@@ -14,7 +12,6 @@ export default function StartingSection() {
 						Центр, в котором МОЖНО и НУЖНО практиковать медицинские навыки для
 						прохождения аккредитации и дальнейшей врачебной практики.
 					</p>
-					<Button>Записатся </Button>
 				</div>
 				{/* <div className={style.column}>
 					<Image

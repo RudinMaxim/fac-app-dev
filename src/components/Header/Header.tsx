@@ -13,6 +13,8 @@ import logo2 from '../../../public/fi.png';
 
 import useDisableScroll from '@/hooks/useDisableScroll';
 import SocialLink from './components/SocialLink';
+import Linked from '../UI/Link/Linked';
+import Button from '../UI/Button/Button';
 
 export default function Header(): React.JSX.Element {
 	// Проверяем, является ли устройство мобильным
@@ -21,10 +23,6 @@ export default function Header(): React.JSX.Element {
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	// Изменяем состояние при клике на значок
 	const handleMenuClick = () => setMenuOpen(!isMenuOpen);
-
-	// Изменяем состояние при клике на ссылку внутри меню
-	const handleMenuToggle = () => setMenuOpen(!isMenuOpen);
-
 	// запрета прокрутки страницы при открытом меню
 	useDisableScroll(isMobile && isMenuOpen);
 
@@ -54,11 +52,14 @@ export default function Header(): React.JSX.Element {
 							</Link>
 
 							{isMobile ? (
-								<FaBars className={style.menuIcon} onClick={handleMenuClick} />
+								<>
+									<FaBars
+										className={style.menuIcon}
+										onClick={handleMenuClick}
+									/>
+								</>
 							) : (
-								<div className={style.Social}>
-									<SocialLink />
-								</div>
+								<SocialLink />
 							)}
 						</div>
 						<div className={style.underRow}>
@@ -66,8 +67,10 @@ export default function Header(): React.JSX.Element {
 								''
 							) : (
 								<>
-									<NavBar onMenuToggle={handleMenuToggle} />
-									<Link href={'/Registration'}>Оставить заявку</Link>
+									<NavBar onMenuToggle={handleMenuClick} />
+									<Link href={'/Registration'} className={style.Linked}>
+										Оставить заявку
+									</Link>
 								</>
 							)}
 						</div>
@@ -78,7 +81,17 @@ export default function Header(): React.JSX.Element {
 			{isMobile && isMenuOpen && (
 				<div className={style.mobileMenu}>
 					<FaTimes className={style.closeIcon} onClick={handleMenuClick} />
-					<NavBar onMenuToggle={handleMenuToggle} />
+					<div className={style.mobileMenuInner}>
+						<NavBar onMenuToggle={handleMenuClick} />
+						<SocialLink />
+
+						<Link
+							href={'/Registration'}
+							className={style.Linked}
+							onClick={handleMenuClick}>
+							Оставить заявку
+						</Link>
+					</div>
 				</div>
 			)}
 		</>

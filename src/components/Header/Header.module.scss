@@ -3,12 +3,20 @@
 	justify-content: space-between;
 }
 
+@mixin mark {
+	&:focus,
+	&:hover {
+		color: var(--main-color-red);
+	}
+}
+
 .Header {
 	width: 100%;
 	background: #fff;
 	box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
 	padding: 1rem 2rem;
 	position: fixed;
+	z-index: 999;
 
 	.logo {
 		font-size: 2rem;
@@ -45,38 +53,69 @@
 		justify-content: space-between;
 		gap: 1rem;
 		li {
-			&:focus,
-			&:hover {
-				color: var(--main-color-red);
-			}
+			@include mark();
+			font-size: 1.5rem;
 		}
 	}
 }
 .SocialLink {
 	display: flex;
-	align-items: center;
+	align-items: end;
+	flex-direction: column;
 	flex-wrap: wrap;
-
 	ul {
 		display: flex;
 		gap: 1rem;
+		li {
+			font-size: 0.8rem;
+			@include mark();
+		}
 	}
 
-	li {
-		font-weight: 700;
-		background-color: var(--main-color-red);
-		padding: 1rem;
-		border-radius: 50%;
-	}
 	.phone {
-		margin-right: 1rem;
+		@include mark();
+		font-size: 1.5rem;
+	}
+}
+.Linked {
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: normal;
+	min-height: 60px;
+	min-width: 0;
+	appearance: none;
+	border: 2px solid inherit;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	outline: none;
+	padding: 1rem 2rem;
+	transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	will-change: transform;
+
+	background-color: var(--main-color-red);
+	color: #fff;
+
+	&:hover,
+	&:focus {
+		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+		transform: translateY(-1px);
+		color: #fff;
+	}
+
+	&:active {
+		box-shadow: none;
+		transform: translateY(0);
+		color: #fff;
 	}
 }
 // Мобильное отображение
 .mobileMenu {
 	padding: 1rem;
 	position: fixed;
-	opacity: 0.9;
+	@include disFlex();
 	top: 0;
 	right: 0;
 	width: 100%;
@@ -84,30 +123,34 @@
 	z-index: 9999;
 	background: var(--main-color-gray);
 
-	nav {
-		height: 100%;
+	.mobileMenuInner {
 		width: 100%;
-
-		ul {
-			height: 100%;
-
-			display: flex;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		nav ul {
 			flex-direction: column;
+		}
+		a {
+			font-size: 2rem;
+		}
+		.SocialLink {
 			align-items: center;
-			justify-content: center;
-
-			font-size: 3rem;
+			ul {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 		}
 	}
 
 	.closeIcon {
+		font-size: 1.5rem;
+		cursor: pointer;
 		display: block;
-
 		position: absolute;
 		right: 27px;
 		top: 30px;
-		font-size: 1.5rem;
-
-		cursor: pointer;
 	}
 }

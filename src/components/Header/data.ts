@@ -29,13 +29,13 @@ export enum TypeLink {
 
 export const ILinkSocial: ILinkSocial[] = [
 	{
-		title: 'Vk',
+		title: 'Вконтакте',
 		url: 'https://vk.com/fca_perm',
 		Type: TypeLink.normal,
 	},
 	{
-		title: '@',
-		url: 'https://vk.com/fca_perm',
+		title: 'sim-center@psma.ru',
+		url: 'sim-center@psma.ru',
 		Type: TypeLink.mailto,
 	},
 ];

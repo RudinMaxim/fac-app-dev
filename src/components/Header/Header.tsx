@@ -52,12 +52,7 @@ export default function Header(): React.JSX.Element {
 							</Link>
 
 							{isMobile ? (
-								<>
-									<FaBars
-										className={style.menuIcon}
-										onClick={handleMenuClick}
-									/>
-								</>
+								<FaBars className={style.menuIcon} onClick={handleMenuClick} />
 							) : (
 								<SocialLink />
 							)}

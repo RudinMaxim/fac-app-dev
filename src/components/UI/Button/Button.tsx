@@ -4,5 +4,5 @@ export interface ButtonProps {
 }
 
 export default function Button({ children }: ButtonProps) {
-	return <button className={style.Button}>{children}</button>;
+	return <Button className={style.Button}>{children}</Button>;
 }

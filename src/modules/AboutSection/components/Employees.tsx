@@ -10,8 +10,8 @@ export default function Employees(): React.JSX.Element {
 	return (
 		<div>
 			<h3>Сотрудники</h3>
-			{employees.map((employee) => (
-				<div key={employee.key} className={style.Employees}>
+			{employees.map((employee, index) => (
+				<div key={index} className={style.Employees}>
 					<div>
 						<Image
 							src={employee.photo}

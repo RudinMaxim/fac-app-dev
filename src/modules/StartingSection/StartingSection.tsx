@@ -1,8 +1,6 @@
 import style from './StartingSection.module.scss';
-import illustrations from '../../assets/illustrations/Diagnosis.svg';
-import Image from 'next/image';
 
-export default function StartingSection() {
+export default function StartingSection(): React.JSX.Element {
 	return (
 		<div className='container'>
 			<section className={style.StartingSection}>
@@ -13,14 +11,6 @@ export default function StartingSection() {
 						прохождения аккредитации и дальнейшей врачебной практики.
 					</p>
 				</div>
-				{/* <div className={style.column}>
-					<Image
-						src={illustrations}
-						width={500}
-						height={600}
-						alt='Picture of the author'
-					/>
-				</div> */}
 			</section>
 		</div>
 	);

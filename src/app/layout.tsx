@@ -4,6 +4,7 @@ const open_Sans = Open_Sans({ subsets: ['latin'] });
 
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+
 export const metadata = {
 	title: 'Федеральный аккредитационный центр ПГМУ',
 	description:

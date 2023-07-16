@@ -1,7 +1,40 @@
 .AboutSection {
+	box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
+	border-radius: 35px;
+	padding: 1rem 2rem;
+	.main {
+	}
+	h2 {
+		color: var(--main-color-red);
+		margin-bottom: 1rem;
+	}
 }
 
 .Possibilities {
+	margin: 50px 0;
+
+	.text {
+		margin-bottom: 1rem;
+	}
+	.cardList {
+		padding: 2rem 0.5rem;
+	}
+	.card {
+		max-width: 400px;
+		height: 300px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
+		border-radius: 35px;
+		padding: 1rem 2rem;
+
+		h4 {
+			margin-bottom: 0.5rem;
+		}
+	}
 }
 
 .timeline {

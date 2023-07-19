@@ -53,7 +53,7 @@ export const possibilities: IPossibilities[] = [
 		title: 'Неоднократность',
 		subtitle:
 			'Неоднократность повторения действий для выработки умения и ликвидации ошибок.',
-		src: '/patterns2.png',
+		src: '/patterns4.png',
 	},
 ];
 

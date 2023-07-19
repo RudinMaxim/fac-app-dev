@@ -8,8 +8,8 @@ import Image from 'next/image';
 
 import style from './Header.module.scss';
 import NavBar from './components/NavBar';
-import logo from '../../../public/Горизонтальный красный.png';
-import logo2 from '../../../public/fi.png';
+
+import { LogoBig, LogoSmell } from '../../assets/image';
 
 import useDisableScroll from '@/hooks/useDisableScroll';
 
@@ -32,14 +32,14 @@ export default function Header(): React.JSX.Element {
 						<Link href={'/'} className={style.logo}>
 							{isMobile ? (
 								<Image
-									src={logo2}
+									src={LogoSmell}
 									width={50}
 									height={50}
 									alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
 								/>
 							) : (
 								<Image
-									src={logo}
+									src={LogoBig}
 									width={250}
 									height={65}
 									alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}

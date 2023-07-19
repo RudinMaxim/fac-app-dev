@@ -4,13 +4,13 @@ import { history } from '../data';
 
 export default function CompanyHistory(): React.JSX.Element {
 	return (
-		<div>
+		<div className={style.CompanyHistory}>
 			<h3>История ФАЦ</h3>
-			<ul className={style.timeline}>
-				{history.map((item) => (
-					<li key={item.key}>
-						<span>{item.date}</span>
-						<p>{item.event}</p>
+			<ul>
+				{history.map((item, index) => (
+					<li key={index}>
+						<div className={style.date}>{item.date}</div>
+						<p className={style.descr}>{item.event}</p>
 					</li>
 				))}
 			</ul>

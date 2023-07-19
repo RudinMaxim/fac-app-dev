@@ -14,7 +14,7 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 
-	--swiper-theme-color: #b62f45 !important;
+	--swiper-theme-color: var(--main-color-red) !important;
 }
 .container {
 	max-width: 1250px;
@@ -24,10 +24,13 @@
 
 main {
 	position: relative;
-	top: 180px;
+	
 }
 section {
 	margin: 0 0 80px 0;
+}
+::selection {
+	background: var(--main-color-gray);
 }
 
 // Reset
@@ -40,6 +43,7 @@ section {
 	border: 0;
 	outline: 0;
 }
+
 body,
 html {
 	position: relative;

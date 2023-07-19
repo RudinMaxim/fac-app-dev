@@ -12,9 +12,6 @@ import logo from '../../../public/Горизонтальный красныи�
 import logo2 from '../../../public/fi.png';
 
 import useDisableScroll from '@/hooks/useDisableScroll';
-import SocialLink from './components/SocialLink';
-import Linked from '../UI/Link/Linked';
-import Button from '../UI/Button/Button';
 
 export default function Header(): React.JSX.Element {
 	// Проверяем, является ли устройство мобильным
@@ -31,44 +28,30 @@ export default function Header(): React.JSX.Element {
 			<header className={style.Header}>
 				<div className='container'>
 					<div className={style.HeaderInner}>
-						<div className={style.topRow}>
-							{/* LOGO */}
-							<Link href={'/'} className={style.logo}>
-								{isMobile ? (
-									<Image
-										src={logo2}
-										width={50}
-										height={50}
-										alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
-									/>
-								) : (
-									<Image
-										src={logo}
-										width={250}
-										height={65}
-										alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
-									/>
-								)}
-							</Link>
+						{/* LOGO */}
+						<Link href={'/'} className={style.logo}>
+							{isMobile ? (
+								<Image
+									src={logo2}
+									width={50}
+									height={50}
+									alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
+								/>
+							) : (
+								<Image
+									src={logo}
+									width={250}
+									height={65}
+									alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
+								/>
+							)}
+						</Link>
 
-							{isMobile ? (
-								<FaBars className={style.menuIcon} onClick={handleMenuClick} />
-							) : (
-								<SocialLink />
-							)}
-						</div>
-						<div className={style.underRow}>
-							{isMobile ? (
-								''
-							) : (
-								<>
-									<NavBar onMenuToggle={handleMenuClick} />
-									<Link href={'/Registration'} className={style.Linked}>
-										Оставить заявку
-									</Link>
-								</>
-							)}
-						</div>
+						{isMobile ? (
+							<FaBars className={style.menuIcon} onClick={handleMenuClick} />
+						) : (
+							<NavBar onMenuToggle={handleMenuClick} />
+						)}
 					</div>
 				</div>
 			</header>
@@ -78,13 +61,12 @@ export default function Header(): React.JSX.Element {
 					<FaTimes className={style.closeIcon} onClick={handleMenuClick} />
 					<div className={style.mobileMenuInner}>
 						<NavBar onMenuToggle={handleMenuClick} />
-						<SocialLink />
 
 						<Link
-							href={'/Registration'}
+							href={'#Contact'}
 							className={style.Linked}
 							onClick={handleMenuClick}>
-							Оставить заявку
+							Контакты
 						</Link>
 					</div>
 				</div>

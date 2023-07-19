@@ -27,20 +27,8 @@
 	}
 	.HeaderInner {
 		@include disFlex;
-		flex-direction: column;
-
-		.topRow {
-			@include disFlex;
-			align-items: center;
-		}
-		.underRow {
-			@include disFlex;
-			align-items: center;
-
-			transition: var(--main-transition);
-		}
+		align-items: center;
 	}
-
 	.menuIcon {
 		cursor: pointer;
 	}
@@ -77,11 +65,8 @@
 	}
 }
 .Linked {
-	font-size: 1rem;
-	font-weight: 600;
-	line-height: normal;
 	min-height: 60px;
-	min-width: 0;
+	text-align: center;
 	appearance: none;
 	border: 2px solid inherit;
 	border-radius: 0.5rem;
@@ -120,7 +105,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: var(--main-color-gray);
+	background: white;
 
 	.mobileMenuInner {
 		width: 100%;
@@ -133,14 +118,6 @@
 		}
 		a {
 			font-size: 2rem;
-		}
-		.SocialLink {
-			align-items: center;
-			ul {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			}
 		}
 	}
 

@@ -7,8 +7,8 @@ export default function AboutSection(): React.JSX.Element {
 	return (
 		<div className='container'>
 			<section className={style.AboutSection}>
+				<h2>О Федеральный аккредитационный центр</h2>
 				<div className={style.main}>
-					<h2>О Федеральный аккредитационный центр</h2>
 					<p className={style.text}>
 						ФАЦ оснащен медицинским оборудованием и инструментами, комплексом
 						специализированных тренажеров, роботов-симуляторов,

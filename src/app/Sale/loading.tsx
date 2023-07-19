@@ -1,3 +1,5 @@
+import Loading from '@/components/Loading/Loading';
+
 export default function loading() {
-	return <div>loading</div>;
+	return <Loading isLoading={false} />;
 }

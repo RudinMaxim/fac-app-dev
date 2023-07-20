@@ -17,7 +17,6 @@ export default function Employees(): React.JSX.Element {
 				{employees.map((employee, index) => (
 					<div key={index} className={style.card}>
 						<ExperienceCounter startYear={employee.experiencestartDate} />
-
 						<Image
 							src={employee.photo}
 							height={400}

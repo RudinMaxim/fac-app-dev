@@ -29,7 +29,7 @@ export default function Header(): React.JSX.Element {
 				<div className='container'>
 					<div className={style.HeaderInner}>
 						{/* LOGO */}
-						<Link href={'/'} className={style.logo}>
+						<Link href={'./'} className={style.logo}>
 							{isMobile ? (
 								<Image
 									src={LogoSmell}
@@ -63,7 +63,7 @@ export default function Header(): React.JSX.Element {
 						<NavBar onMenuToggle={handleMenuClick} />
 
 						<Link
-							href={'#Contact'}
+							href={'./#Contact'}
 							className={style.Linked}
 							onClick={handleMenuClick}>
 							Контакты

@@ -7,7 +7,9 @@
 
 	--main-color-red: #b62f45;
 	--main-color-gray: #d5dbd8;
-	--main-transition: 0.3s all;
+
+	--bg-color-light: #fff;
+	--bg-color-dark: #000000;
 
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -15,6 +17,10 @@
 	-webkit-text-size-adjust: 100%;
 
 	--swiper-theme-color: var(--main-color-red) !important;
+
+	::selection {
+		background: var(--main-color-gray);
+	}
 }
 .container {
 	max-width: 1250px;
@@ -22,17 +28,14 @@
 	padding: 0px 8px;
 }
 
-main {
-	position: relative;
-	top: 150px;
-}
 section {
 	margin: 0 0 80px 0;
 }
-::selection {
-	background: var(--main-color-gray);
+main {
+	position: relative;
+	top: 150px;
+	bottom: 30px;
 }
-
 // Reset
 *,
 *::after,
@@ -44,8 +47,7 @@ section {
 	outline: 0;
 }
 
-body,
-html {
+body {
 	position: relative;
 	a {
 		text-decoration: none;

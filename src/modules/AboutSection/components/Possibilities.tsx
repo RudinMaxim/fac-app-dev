@@ -3,13 +3,14 @@ import React from 'react';
 import { Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useMediaQuery } from 'react-responsive';
+
 import 'swiper/scss';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 import style from '../AboutSection.module.scss';
 import Image from 'next/image';
-import { possibilities } from '../../data';
+import { possibilities } from '../data';
 
 export default function Possibilities(): React.JSX.Element {
 	const isMobile: boolean = useMediaQuery({ maxWidth: 768 });

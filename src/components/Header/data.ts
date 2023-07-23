@@ -8,11 +8,11 @@ export const ILinkNav: ILinkNav[] = [
 		url: './',
 	},
 	{
-		title: 'Информация',
-		url: './Information',
-	},
-	{
 		title: 'Товары',
 		url: './Sale',
+	},
+	{
+		title: 'Информация',
+		url: './Information',
 	},
 ];

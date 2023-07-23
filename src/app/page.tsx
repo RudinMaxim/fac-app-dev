@@ -2,7 +2,7 @@ import {
 	StartingSection,
 	AboutSection,
 	ContactSection,
-} from '../modules/MainPage/export';
+} from '../modules/export';
 
 export default function Home(): React.JSX.Element {
 	return (

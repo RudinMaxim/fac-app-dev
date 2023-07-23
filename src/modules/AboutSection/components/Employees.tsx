@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import style from '../AboutSection.module.scss';
 
-import { employees } from '../../data';
-import { ExperienceCounter } from '../../utils/ExperienceCounter';
-import { ReadMore } from '../../utils/ReadMore';
+import { employees } from '../data';
+import { ExperienceCounter } from '../utils/ExperienceCounter';
+import { ReadMore } from '../utils/ReadMore';
 import { FaCertificate } from 'react-icons/fa';
 
 export default function Employees(): React.JSX.Element {

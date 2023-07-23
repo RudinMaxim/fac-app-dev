@@ -1,6 +1,6 @@
 import style from '../AboutSection.module.scss';
 import React from 'react';
-import { history } from '../../data';
+import { history } from '../data';
 
 export default function CompanyHistory(): React.JSX.Element {
 	return (

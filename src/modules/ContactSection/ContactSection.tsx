@@ -1,5 +1,5 @@
 import style from './ContactSection.module.scss';
-import { SocialLink, YandexMap } from './export';
+import { SocialLink, YandexMap } from './components/export';
 
 export default function ContactSection(): React.JSX.Element {
 	return (

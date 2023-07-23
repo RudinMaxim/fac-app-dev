@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { LinkSocial } from '../../data';
+import { LinkSocial } from '../data';
 import style from '../ContactSection.module.scss';
 
 export default function SocialLink() {

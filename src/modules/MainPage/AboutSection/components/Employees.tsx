@@ -1,20 +1,26 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import style from '../AboutSection.module.scss';
 
-import { employees } from '../data';
-import { ExperienceCounter } from '../utils/ExperienceCounter';
-import { ReadMore } from '../utils/ReadMore';
+import { employees } from '../../data';
+import { ExperienceCounter } from '../../utils/ExperienceCounter';
+import { ReadMore } from '../../utils/ReadMore';
 import { FaCertificate } from 'react-icons/fa';
 
 export default function Employees(): React.JSX.Element {
+	const [page, setPage] = useState(6);
+
+	const showMore = () => {
+		setPage(page + 3);
+	};
+
 	return (
 		<div className={style.Employees}>
 			<h3>Сотрудники</h3>
 			<div className={style.cardList}>
-				{employees.map((employee, index) => (
+				{employees.slice(0, page).map((employee, index) => (
 					<div key={index} className={style.card}>
 						<ExperienceCounter startYear={employee.experiencestartDate} />
 						<Image
@@ -28,7 +34,7 @@ export default function Employees(): React.JSX.Element {
 							<h4 className={style.title}>{employee.name}</h4>
 							<p className={style.subtitle}>{employee.position}</p>
 
-							<ReadMore text={employee.info} maxLength={150} />
+							<ReadMore text={employee.info} maxLength={100} />
 
 							<ul className={style.сertificate}>
 								{employee.сertificate?.map((сertificate, index) => (
@@ -44,6 +50,14 @@ export default function Employees(): React.JSX.Element {
 					</div>
 				))}
 			</div>
+
+			{page < employees.length && (
+				<div className={style.showMoreInner}>
+					<button onClick={showMore} className={style.showMore}>
+						Показать еще
+					</button>
+				</div>
+			)}
 		</div>
 	);
 }

@@ -1,6 +1,6 @@
 import style from './ContactSection.module.scss';
-import YandexMap from './components/YandexMap';
-import SocialLink from './components/SocialLink';
+import { SocialLink, YandexMap } from './export';
+
 export default function ContactSection(): React.JSX.Element {
 	return (
 		<div className='container'>

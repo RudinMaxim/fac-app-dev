@@ -59,16 +59,15 @@ export default function Header(): React.JSX.Element {
 			{isMobile && isMenuOpen && (
 				<div className={style.mobileMenu}>
 					<FaTimes className={style.closeIcon} onClick={handleMenuClick} />
-					<div className={style.mobileMenuInner}>
-						<NavBar onMenuToggle={handleMenuClick} />
 
-						<Link
-							href={'./#Contact'}
-							className={style.Linked}
-							onClick={handleMenuClick}>
-							Контакты
-						</Link>
-					</div>
+					<NavBar onMenuToggle={handleMenuClick} />
+
+					<Link
+						href={'./#Contact'}
+						className={style.Linked}
+						onClick={handleMenuClick}>
+						Контакты
+					</Link>
 				</div>
 			)}
 		</>

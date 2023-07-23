@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import style from '../AboutSection.module.scss';
+import style from '../AboutSection/AboutSection.module.scss';
 
 interface ExperienceCounterProps {
 	startYear: number; // год начала работы

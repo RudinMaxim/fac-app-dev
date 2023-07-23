@@ -1,7 +1,5 @@
 import style from './AboutSection.module.scss';
-import Possibilities from './components/Possibilities';
-import CompanyHistory from './components/CompanyHistory';
-import Employees from './components/Employees';
+import { Possibilities, CompanyHistory, Employees } from './export';
 
 export default function AboutSection(): React.JSX.Element {
 	return (

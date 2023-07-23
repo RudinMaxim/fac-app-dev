@@ -1,7 +1,8 @@
-import AboutSection from '@/modules/AboutSection/AboutSection';
-import StartingSection from '@/modules/StartingSection/StartingSection';
-import ContactSection from '@/modules/ContactSection/ContactSection';
-import Loading from '@/components/Loading/Loading';
+import {
+	StartingSection,
+	AboutSection,
+	ContactSection,
+} from '../modules/MainPage/export';
 
 export default function Home(): React.JSX.Element {
 	return (

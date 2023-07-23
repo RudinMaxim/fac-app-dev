@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from '../AboutSection.module.scss';
+import style from '../AboutSection/AboutSection.module.scss';
 interface Props {
 	text: string;
 	maxLength: number;

@@ -9,7 +9,7 @@ import 'swiper/css/scrollbar';
 
 import style from '../AboutSection.module.scss';
 import Image from 'next/image';
-import { possibilities } from '../data';
+import { possibilities } from '../../data';
 
 export default function Possibilities(): React.JSX.Element {
 	const isMobile: boolean = useMediaQuery({ maxWidth: 768 });

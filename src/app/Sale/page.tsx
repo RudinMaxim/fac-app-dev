@@ -1,3 +1,9 @@
+import { StoreSection } from '@/modules/exportModules';
+
 export default function Sale() {
-	return <main>Sale</main>;
+	return (
+		<main>
+			<StoreSection />
+		</main>
+	);
 }

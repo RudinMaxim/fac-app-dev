@@ -1,22 +1,24 @@
 'use client';
-import React, { useState } from 'react';
-import PopupWindow from '@/components/Popup/Popup';
+import React, { useEffect, useState } from 'react';
 import style from './Store.module.scss';
+import Filtration from './components/Filtration';
+import ItemList from './components/ItemList';
+import { Goods } from './data';
 
 export default function Store() {
-	const [isOpen, setIsOpen] = useState(false);
+	const [query, setQuery] = useState('');
+	const handleQueryChange = (value: string) => {
+		return setQuery(value);
+	};
 
-	const handleOpen = () => setIsOpen(true);
-	const handleClose = () => setIsOpen(false);
+	// console.log(query);
 
 	return (
 		<div className='container'>
 			<section className={style.Store}>
-				<button onClick={handleOpen}>Open Popup</button>
-				<PopupWindow isOpen={isOpen} onClose={handleClose}>
-					<h2>Popup Content</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-				</PopupWindow>
+				<h1>Товары</h1>
+				<Filtration value={query} onChange={handleQueryChange} />
+				<ItemList goods={Goods} query={query} />
 			</section>
 		</div>
 	);

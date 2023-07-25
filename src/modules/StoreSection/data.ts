@@ -1,4 +1,4 @@
-interface IGoods {
+export interface IGoods {
 	id: number;
 	title: string;
 	for: string;

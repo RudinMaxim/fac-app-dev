@@ -12,9 +12,7 @@ import { FaCertificate } from 'react-icons/fa';
 export default function Employees(): React.JSX.Element {
 	const [page, setPage] = useState(6);
 
-	const showMore = () => {
-		setPage(page + 3);
-	};
+	const showMore = () => setPage(page + 3);
 
 	return (
 		<div className={style.Employees}>

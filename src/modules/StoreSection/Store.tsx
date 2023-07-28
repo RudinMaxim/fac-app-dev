@@ -33,7 +33,7 @@ export default function Store(): React.JSX.Element {
 	return (
 		<div className='container'>
 			<section className={style.Store}>
-				<h1>Обучающий цикл</h1>
+				<h1>Обучающие циклы</h1>
 				<Filtration value={query} onChange={handleQueryChange} />
 				{loading ? <Loading /> : <ItemList goods={Goods} query={searchQuery} />}
 			</section>

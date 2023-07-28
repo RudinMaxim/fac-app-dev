@@ -20,9 +20,9 @@ export default function AboutSection(): React.JSX.Element {
 					</p>
 				</div>
 
-				<Employees />
 				<Possibilities />
 				<CompanyHistory />
+				<Employees />
 			</section>
 		</div>
 	);

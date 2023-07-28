@@ -3,22 +3,39 @@ import React, { useEffect, useState } from 'react';
 import style from './Store.module.scss';
 import Filtration from './components/Filtration';
 import ItemList from './components/ItemList';
+import Loading from '@/components/Loading/Loading';
 import { Goods } from './data';
 
-export default function Store() {
+export default function Store(): React.JSX.Element {
 	const [query, setQuery] = useState('');
+	const [searchQuery, setSearchQuery] = useState('');
+	const [loading, setLoading] = useState(true);
+
 	const handleQueryChange = (value: string) => {
-		return setQuery(value);
+		setQuery(value);
 	};
 
-	// console.log(query);
+	useEffect(() => {
+		const delayDebounceFn = setTimeout(() => {
+			setSearchQuery(query);
+		}, 200);
+
+		return () => clearTimeout(delayDebounceFn);
+	}, [query]);
+
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 400);
+	}, [searchQuery]);
 
 	return (
 		<div className='container'>
 			<section className={style.Store}>
 				<h1>Товары</h1>
 				<Filtration value={query} onChange={handleQueryChange} />
-				<ItemList goods={Goods} query={query} />
+				{loading ? <Loading /> : <ItemList goods={Goods} query={searchQuery} />}
 			</section>
 		</div>
 	);

@@ -1,11 +1,11 @@
 import React, { FC, ChangeEvent } from 'react';
 import style from './Input.module.scss';
 import { FaSistrix } from 'react-icons/fa';
-FaSistrix;
+
 interface InputProps {
 	label: string | React.JSX.Element;
 	value: string;
-	onChange: () => void;
+	onChange: () => string;
 	placeholder?: string;
 	type?: string;
 	required?: boolean;
@@ -13,7 +13,6 @@ interface InputProps {
 }
 
 const Input: FC<InputProps> = ({
-	label,
 	value,
 	onChange,
 	placeholder = '',

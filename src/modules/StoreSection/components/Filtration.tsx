@@ -8,13 +8,17 @@ interface Ifiltration {
 }
 
 export default function Filtration({ value, onChange }: Ifiltration) {
-	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	type ChangeType = React.ChangeEvent<HTMLInputElement>;
+
+	const handleInputChange = (event: ChangeType) => {
 		onChange(event.target.value);
 	};
+
 	return (
 		<div className={style.Filtration}>
 			<Input
 				value={value}
+				// @ts-ignore
 				onChange={handleInputChange}
 				label={'Поиск'}
 				placeholder={'Поиск...'}

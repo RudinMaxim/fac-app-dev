@@ -1,41 +1,40 @@
-import React, { FC, ChangeEvent } from 'react';
-import style from './Input.module.scss';
-import { FaSistrix } from 'react-icons/fa';
+import React from 'react';
+import './Popup.scss';
+import { FaTimes } from 'react-icons/fa';
 
-interface InputProps {
-	label: string | React.JSX.Element;
-	value: string;
-	onChange: () => string;
-	placeholder?: string;
-	type?: string;
-	required?: boolean;
-	name?: string;
+interface PopupWindowProps {
+	isOpen: boolean;
+	onClose: () => void;
+	children: React.ReactNode;
+	title?: string;
 }
 
-const Input: FC<InputProps> = ({
-	value,
-	onChange,
-	placeholder = '',
-	type,
-	required = true,
-	name,
+const PopupWindow: React.FC<PopupWindowProps> = ({
+	isOpen,
+	onClose,
+	children,
+	title,
 }) => {
+	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+		if (event.target === event.currentTarget) {
+			onClose();
+		}
+	};
 	return (
-		<div className={style.inputContainer}>
-			<input
-				className={style.input}
-				type={type}
-				value={value}
-				onChange={onChange}
-				placeholder={placeholder}
-				required={required}
-				name={name}
-			/>
-			<label className={style.inputLabel} htmlFor={name}>
-				<FaSistrix />
-			</label>
+		<div
+			className={`popup-window ${isOpen ? 'open' : ''}`}
+			onClick={handleClick}>
+			<div className='popup-content'>
+				<div className='topBar'>
+					<h3>{title}</h3>
+					<button className='close-button' onClick={onClose}>
+						<FaTimes size={25} />
+					</button>
+				</div>
+				{children}
+			</div>
 		</div>
 	);
 };
 
-export default Input;
+export default PopupWindow;

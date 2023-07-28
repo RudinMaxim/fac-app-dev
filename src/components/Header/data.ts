@@ -8,7 +8,7 @@ export const ILinkNav: ILinkNav[] = [
 		url: './',
 	},
 	{
-		title: 'Обучающий цикл',
+		title: 'Обучающие циклы',
 		url: './Sale',
 	},
 	{

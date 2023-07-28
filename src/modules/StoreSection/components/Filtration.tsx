@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../Store.module.scss';
-import Input from '@/components/Input/Input';
+import Input from '@/components/InputSearch/Input';
 
 interface Ifiltration {
 	value: string;

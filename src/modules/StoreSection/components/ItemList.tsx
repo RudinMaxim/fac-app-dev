@@ -19,10 +19,12 @@ export default function ItemList({
 	const handleOpen = (good: IGoods) => {
 		setSelectedGood(good);
 		setIsOpen(true);
+		document.body.style.overflow = 'hidden';
 	};
 	const handleClose = () => {
 		setSelectedGood(null);
 		setIsOpen(false);
+		document.body.style.overflow = 'auto';
 	};
 
 	const filteredGoods = goods.filter(

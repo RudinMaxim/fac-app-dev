@@ -1,5 +1,5 @@
 import React from 'react';
-import './Popup.scss';
+import style from './Popup.module.scss';
 import { FaTimes } from 'react-icons/fa';
 
 interface PopupWindowProps {
@@ -14,7 +14,7 @@ const PopupWindow: React.FC<PopupWindowProps> = ({
 	onClose,
 	children,
 	title,
-}) => {
+}): React.JSX.Element => {
 	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
 		if (event.target === event.currentTarget) {
 			onClose();
@@ -22,12 +22,12 @@ const PopupWindow: React.FC<PopupWindowProps> = ({
 	};
 	return (
 		<div
-			className={`popup-window ${isOpen ? 'open' : ''}`}
+			className={`${style.popup_window} ${isOpen ? style.open : ''}`}
 			onClick={handleClick}>
-			<div className='popup-content'>
-				<div className='topBar'>
+			<div className={style.popup_content}>
+				<div className={style.topBar}>
 					<h3>{title}</h3>
-					<button className='close-button' onClick={onClose}>
+					<button className={style.close_button} onClick={onClose}>
 						<FaTimes size={25} />
 					</button>
 				</div>

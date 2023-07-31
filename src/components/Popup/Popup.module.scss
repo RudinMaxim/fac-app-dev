@@ -1,4 +1,4 @@
-.popup-window {
+.popup_window {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -15,7 +15,7 @@
 		visibility: visible;
 	}
 
-	.popup-content {
+	.popup_content {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -34,7 +34,7 @@
 		align-items: center;
 		min-height: 50px;
 
-		.close-button {
+		.close_button {
 			background-color: transparent;
 			cursor: pointer;
 		}

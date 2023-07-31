@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import style from './ScrollToTopButton.module.scss';
 import { FaArrowUp } from 'react-icons/fa';
 
-export default function ScrollToTopButton() {
+export default function ScrollToTopButton(): React.JSX.Element {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {

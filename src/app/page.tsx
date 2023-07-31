@@ -1,3 +1,4 @@
+import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
 import {
 	StartingSection,
 	AboutSection,

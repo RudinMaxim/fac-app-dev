@@ -1,27 +1,28 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { FaBars, FaTimes } from 'react-icons/fa';
-
+import { LogoBig, LogoSmell } from '../../assets/image';
 import Link from 'next/link';
 import Image from 'next/image';
-
 import style from './Header.module.scss';
 import NavBar from './components/NavBar';
-
-import { LogoBig, LogoSmell } from '../../assets/image';
-
-import useDisableScroll from '@/hooks/useDisableScroll';
+import useDisableScroll from '@/hooks/useScrollLock';
 
 export default function Header(): React.JSX.Element {
-	// Проверяем, является ли устройство мобильным
-	const isMobile: boolean = useMediaQuery({ maxWidth: 768 });
 	// Состояние для открытия/закрытия меню
 	const [isMenuOpen, setMenuOpen] = useState(false);
+
+	// Запрет прокрутки страницы
+	useDisableScroll(isMenuOpen);
+
+	// Проверяем, является ли устройство мобильным
+	const isMobile: boolean = useMediaQuery({ maxWidth: 868 });
+
 	// Изменяем состояние при клике на значок
-	const handleMenuClick = () => setMenuOpen(!isMenuOpen);
-	// запрета прокрутки страницы при открытом меню
-	useDisableScroll(isMobile && isMenuOpen);
+	const handleMenuClick = () => {
+		setMenuOpen(!isMenuOpen);
+	};
 
 	return (
 		<>

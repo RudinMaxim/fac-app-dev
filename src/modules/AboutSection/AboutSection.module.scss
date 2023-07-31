@@ -24,12 +24,12 @@
 	}
 	.card {
 		max-width: 400px;
-		height: 300px;
-		gap: 15px;
+		height: 350px;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		text-align: justify;
 
 		box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
 		border-radius: 10px;
@@ -40,6 +40,9 @@
 		}
 		&:last-child {
 			margin-right: 0;
+		}
+		&:first-child {
+			margin-left: 0;
 		}
 	}
 }

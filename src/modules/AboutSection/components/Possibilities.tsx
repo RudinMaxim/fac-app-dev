@@ -6,7 +6,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import 'swiper/scss';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 import style from '../AboutSection.module.scss';
 import Image from 'next/image';

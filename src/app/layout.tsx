@@ -4,6 +4,7 @@ const open_Sans = Open_Sans({ subsets: ['latin'] });
 
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
 
 export const metadata = {
 	title: 'Федеральный аккредитационный центр ПГМУ',
@@ -25,6 +26,11 @@ export default function RootLayout({
 				<Header />
 				{children}
 				<Footer />
+
+				{/* Прокрутка в верх контейнера */}
+				<div className='container'>
+					<ScrollToTopButton />
+				</div>
 			</body>
 		</html>
 	);

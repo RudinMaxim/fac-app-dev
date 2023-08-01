@@ -3,12 +3,8 @@
 	box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
 	border-radius: 35px;
 	padding: 1rem 2rem;
-	margin-top: 180px;
 
 	background-color: white;
-	// background: url('../../assets/image/StartingSectionImage.png') no-repeat;
-	// background-size: contain;
-	// background-position: right bottom;
 
 	display: flex;
 	align-items: center;
@@ -17,13 +13,24 @@
 	h1 {
 		font-size: 2rem;
 		max-width: 100%;
+		margin-bottom: 1rem;
+		text-wrap: balance;
 	}
 	p {
-		max-width: 500px;
+		max-width: 600px;
+		color: var(--main-color-red);
+		font-weight: 600;
+		text-wrap: balance;
 	}
 }
 @media (max-width: 500px) {
 	.StartingSection {
 		padding: 0 1rem;
+		h1 {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 0.75rem;
+		}
 	}
 }

@@ -1,5 +1,5 @@
 import style from './AboutSection.module.scss';
-import { Possibilities, CompanyHistory, Employees } from './export';
+import { Possibilities, CompanyHistory, Employees, Question } from './export';
 
 export default function AboutSection(): React.JSX.Element {
 	return (
@@ -23,6 +23,7 @@ export default function AboutSection(): React.JSX.Element {
 				<Possibilities />
 				<CompanyHistory />
 				<Employees />
+				<Question />
 			</section>
 		</div>
 	);

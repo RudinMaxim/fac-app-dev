@@ -13,6 +13,16 @@
 	}
 }
 
+@media screen and (max-width: 768px) {
+	.AboutSection {
+		padding: 0.5rem 1rem;
+	}
+	.Question {
+		li {
+			font-size: 0.75rem;
+		}
+	}
+}
 .Possibilities {
 	margin: 50px 0;
 
@@ -154,6 +164,7 @@
 }
 
 .Employees {
+	margin-bottom: 50px;
 	.cardList {
 		display: flex;
 		flex-wrap: wrap;
@@ -249,8 +260,38 @@
 	}
 	.showButton {
 		background: none;
-		text-align: end;
-		margin-bottom: 1rem;
 		cursor: pointer;
+	}
+}
+.Question {
+	svg {
+		fill: var(--main-color-red);
+		margin-right: 20px;
+		transition: transform 0.3s ease;
+		&:hover {
+			transform: scale(1.5);
+		}
+		path {
+			width: 30px;
+			height: 30px;
+		}
+	}
+	li {
+		margin-bottom: 1rem;
+		width: 100%;
+		padding: 1rem 2rem;
+		background-color: #fff;
+		box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
+		border-radius: 35px;
+		cursor: pointer;
+
+		.title {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			color: var(--main-color-red);
+			font-weight: 600;
+			min-height: 50px;
+		}
 	}
 }

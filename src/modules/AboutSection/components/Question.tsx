@@ -22,22 +22,20 @@ export default function Question(): React.JSX.Element {
 		});
 	};
 
-	const renderQuestions = () => {
-		return question.map((q: QuestionProps, index: number) => (
-			<li key={index}>
-				<div className={style.title} onClick={() => toggleCollapse(index)}>
-					{isOpen[index] ? <FaMinus size={'1rem'} /> : <FaPlus size={'1rem'} />}
-					{q.question}
-				</div>
-				{isOpen[index] && <p className={style.answer}>{q.answer}</p>}
-			</li>
-		));
-	};
-
 	return (
 		<div className={style.Question}>
 			<h3>Часто задаваемые вопросы</h3>
-			<ul>{renderQuestions()}</ul>
+			<ul>
+				{question.map((question: QuestionProps, index: number) => (
+					<li key={index}>
+						<div className={style.title} onClick={() => toggleCollapse(index)}>
+							<span>{isOpen[index] ? <FaMinus /> : <FaPlus />}</span>
+							{question.question}
+						</div>
+						{isOpen[index] && <p className={style.answer}>{question.answer}</p>}
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }

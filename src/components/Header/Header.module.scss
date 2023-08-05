@@ -20,19 +20,9 @@
 	left: 0;
 	z-index: 999;
 
-	.logo {
-		font-size: 2rem;
-		line-height: 2;
-		font-weight: 700;
-		@include disFlex;
-		align-items: center;
-	}
 	.HeaderInner {
 		@include disFlex;
 		align-items: center;
-	}
-	.menuIcon {
-		cursor: pointer;
 	}
 }
 .NavBar {
@@ -43,13 +33,18 @@
 		gap: 1rem;
 		li {
 			@include mark();
-			font-size: 1.25rem;
+			font-size: 1rem;
 		}
 	}
 }
-
+.Linked_inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 .Linked {
-	min-height: 60px;
+	min-height: 50px;
+	width: 200px;
 	text-align: center;
 	border-radius: 0.5rem;
 	cursor: pointer;
@@ -62,7 +57,6 @@
 	&:hover,
 	&:focus {
 		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-		transform: translateY(-1px);
 		color: #fff;
 	}
 
@@ -70,6 +64,37 @@
 		box-shadow: none;
 		transform: translateY(0);
 		color: #fff;
+	}
+
+	.Contact {
+	}
+}
+
+.LinkedPhone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1rem;
+	border-radius: 50%;
+	height: 3rem;
+	width: 3rem;
+	background-color: var(--main-color-red);
+	transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+	svg {
+		max-width: 2rem;
+		max-height: 2rem;
+	}
+	path {
+		fill: white;
+	}
+	&:hover,
+	&:focus {
+		box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+		color: #fff;
+	}
+	&:last-child {
+		margin-right: 0;
 	}
 }
 // Мобильное отображение
@@ -98,16 +123,17 @@
 		}
 	}
 	a {
-		font-size: 2rem;
 		width: 100%;
+		font-size: 2rem;
 	}
+}
 
-	.closeIcon {
-		font-size: 1.5rem;
-		cursor: pointer;
-		display: block;
-		position: absolute;
-		right: 27px;
-		top: 30px;
-	}
+.closeIcon,
+.menuIconMobil {
+	font-size: 1.5rem;
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	right: 27px;
+	top: 30px;
 }

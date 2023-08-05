@@ -15,4 +15,8 @@ export const ILinkNav: ILinkNav[] = [
 		title: 'Информация',
 		url: './Information',
 	},
+	{
+		title: 'Новости',
+		url: './News',
+	},
 ];

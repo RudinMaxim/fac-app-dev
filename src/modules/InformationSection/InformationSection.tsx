@@ -1,9 +1,11 @@
-import React from 'react';
 import style from './InformationSection.module.scss';
-export default function InformationSection() {
+
+export default function InformationSection(): React.JSX.Element {
 	return (
 		<div className='container'>
-			<section>InformationSection</section>;
+			<section className={style.Information}>
+				<h1>Информация</h1>
+			</section>
 		</div>
 	);
 }

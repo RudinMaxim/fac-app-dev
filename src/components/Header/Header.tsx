@@ -1,7 +1,7 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaPhone } from 'react-icons/fa';
 import { LogoBig, LogoSmell } from '../../assets/image';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -29,29 +29,45 @@ export default function Header(): React.JSX.Element {
 			<header className={style.Header}>
 				<div className='container'>
 					<div className={style.HeaderInner}>
-						{/* LOGO */}
-						<Link href={'./'} className={style.logo}>
-							{isMobile ? (
-								<Image
-									src={LogoSmell}
-									width={50}
-									height={50}
-									alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
-								/>
-							) : (
-								<Image
-									src={LogoBig}
-									width={250}
-									height={65}
-									alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
-								/>
-							)}
-						</Link>
-
 						{isMobile ? (
-							<FaBars className={style.menuIcon} onClick={handleMenuClick} />
+							<>
+								<Link href={'/'}>
+									<Image
+										src={LogoSmell}
+										width={50}
+										height={50}
+										alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
+									/>
+								</Link>
+
+								<FaBars
+									className={style.menuIconMobil}
+									onClick={handleMenuClick}
+								/>
+							</>
 						) : (
-							<NavBar onMenuToggle={handleMenuClick} />
+							<>
+								<Link href={'/'}>
+									<Image
+										src={LogoBig}
+										width={200}
+										height={55}
+										alt={'Логотип Федеральный аккредитационный центр при ПГМУ'}
+									/>
+								</Link>
+								<NavBar onMenuToggle={handleMenuClick} />
+								<div className={style.Linked_inner}>
+									<Link href={'./#Contact'} className={style.LinkedPhone}>
+										<FaPhone />
+									</Link>
+									<Link
+										href={'./#Contact'}
+										className={`${style.Linked} `}
+										onClick={handleMenuClick}>
+										Связатся с нами
+									</Link>
+								</div>
+							</>
 						)}
 					</div>
 				</div>
@@ -67,7 +83,7 @@ export default function Header(): React.JSX.Element {
 						href={'./#Contact'}
 						className={style.Linked}
 						onClick={handleMenuClick}>
-						Контакты
+						Связатся с нами
 					</Link>
 				</div>
 			)}

@@ -1,13 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import style from '../AboutSection.module.scss';
-
 import { employees } from '../data';
 import { ExperienceCounter } from '../utils/ExperienceCounter';
 import { ReadMore } from '../utils/ReadMore';
 import { FaCertificate } from 'react-icons/fa';
+import { Linked } from '@/UI/exportUI';
 
 export default function Employees(): React.JSX.Element {
 	const [page, setPage] = useState(6);
@@ -37,10 +36,10 @@ export default function Employees(): React.JSX.Element {
 							<ul className={style.сertificate}>
 								{employee.сertificate?.map((сertificate, index) => (
 									<li key={index}>
-										<Link href={сertificate.link} target='_blank'>
+										<Linked href={сertificate.link} target='_blank'>
 											<FaCertificate />
 											{сertificate.name}
-										</Link>
+										</Linked>
 									</li>
 								))}
 							</ul>

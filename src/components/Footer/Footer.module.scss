@@ -1,21 +1,18 @@
-@mixin mark {
-	background-color: var(--main-color-red);
-	color: white;
-	padding: 1rem;
-	border-radius: 35px;
-}
-
 .Footer {
-	background-color: white;
-	box-shadow: 0px 10px 30px 0px rgba(50, 87, 164, 0.1);
+	background-color: var(--bg-color);
+	box-shadow: var(--box-shadow);
 
 	.FooterSection {
-		padding: 1rem;
+		padding: 1rem 0rem;
 
-		h2,
-		h3 {
+		h2 {
 			text-align: center;
-			color: var(--main-color-red);
+			color: var(--primary-color);
+			margin-bottom: 1rem;
+		}
+		h3 {
+			text-align: start;
+			color: var(--primary-color);
 		}
 		iframe {
 			width: 100%;
@@ -26,16 +23,11 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
+			margin-bottom: 1rem;
+
 			.workTime,
-			.address {
-				flex-basis: 45%;
-				h4 {
-					font-size: 1.5rem;
-					margin-bottom: 1rem;
-					&:last-child {
-						margin-bottom: 0;
-					}
-				}
+			.address,
+			.SocialLink {
 				p {
 					margin-bottom: 0.5rem;
 					&:last-child {
@@ -43,44 +35,10 @@
 					}
 				}
 				address {
+					text-align: start;
 					margin-bottom: 0.5rem;
 					&:last-child {
 						margin-bottom: 0;
-					}
-				}
-			}
-
-			.address {
-				text-align: right;
-			}
-			h4 {
-				color: var(--main-color-red);
-			}
-		}
-		.SocialLink {
-			ul {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-wrap: wrap;
-				margin: 10px 0px;
-
-				li {
-					margin: 0 10px;
-
-					a {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						border-radius: 50%;
-						background-color: #fff;
-						color: #000;
-						font-size: 20px;
-
-						&:focus,
-						&:hover {
-							color: var(--main-color-red);
-						}
 					}
 				}
 			}

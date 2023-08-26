@@ -1,0 +1,25 @@
+.Button {
+	border: none;
+	padding: 1rem;
+	text-align: center;
+	cursor: pointer;
+	transition: opacity 0.3s ease-in-out;
+	background-color: var(--primary-colo);
+	color: var(--bg-color);
+
+	&:hover {
+	}
+
+	&:focus {
+	}
+
+	&:disabled {
+	}
+}
+.CircleButton {
+	border-radius: 50%;
+}
+
+.SquareButton {
+	border-radius: 0;
+}

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import style from './ScrollToTopButton.module.scss';
 import { FaArrowUp } from 'react-icons/fa';
+import { Button } from '@/UI/exportUI';
 
 export default function ScrollToTopButton(): React.JSX.Element {
 	const [isVisible, setIsVisible] = useState(false);
@@ -24,10 +25,10 @@ export default function ScrollToTopButton(): React.JSX.Element {
 	};
 
 	return (
-		<button
-			className={`${style.scrollToTop} ${isVisible ? style.visible : ''}`}
-			onClick={handleClick}>
-			<FaArrowUp />
-		</button>
+		<span className={`${style.scrollToTop} ${isVisible ? style.visible : ''}`}>
+			<Button onClick={handleClick} shape='circle'>
+				<FaArrowUp />
+			</Button>
+		</span>
 	);
 }

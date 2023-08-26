@@ -1,0 +1,30 @@
+.Linked {
+	text-align: center;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: var(--transition);
+
+	&:focus,
+	&:hover {
+		color: var(--primary-color);
+	}
+}
+.LinkedButton {
+	min-height: 50px;
+	width: 200px;
+	background-color: var(--primary-color);
+	color: var(--bg-color);
+	text-align: center;
+	padding: 1rem 2rem;
+
+	&:hover,
+	&:focus {
+		box-shadow: rgba(0, 0, 0, 0.5) 0 8px 15px;
+		color: var(--bg-color);
+	}
+	&:active {
+		box-shadow: none;
+		transform: translateY(0);
+		color: var(--bg-color);
+	}
+}

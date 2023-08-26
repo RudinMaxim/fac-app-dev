@@ -1,18 +1,20 @@
 import './globals.scss';
+import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 const open_Sans = Open_Sans({ subsets: ['latin'] });
 
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
-import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
+import {
+	Header,
+	Footer,
+	ScrollToTopButton,
+} from '@/components/exportComponents';
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Федеральный аккредитационный центр ПГМУ',
 	description:
 		'Федеральный аккредитационный центр - симуляционно-аттестационный центр III (высшего) уровня. Центр, в котором МОЖНО и НУЖНО практиковать медицинские навыки для прохождения аккредитации и дальнейшей врачебной практики',
 	keywords:
 		'Федеральный аккредитационный центр, Федеральный аккредитационный центр ПГМУ Пермь, ПГМУ, ПГМУ ФАЦ, ФАЦ Пермь',
-	author: 'Рудин Максим',
 };
 
 export default function RootLayout({

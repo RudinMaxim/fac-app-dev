@@ -1,26 +1,38 @@
+'use client';
 import React from 'react';
 import style from '../Header.module.scss';
-
-import Link from 'next/link';
 import { ILinkNav } from '../data';
+import { usePathname } from 'next/navigation';
+import { Linked } from '@/UI/exportUI';
 
 interface NavBarProps {
 	onMenuToggle: () => void;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ onMenuToggle }) => {
+	const currentRoute = usePathname();
+
 	return (
 		<nav className={style.NavBar}>
 			<ul>
 				{ILinkNav.map((link, index) => (
 					<li key={index}>
-						<Link href={link.url} onClick={onMenuToggle}>
+						<Linked
+							href={link.url}
+							onClick={onMenuToggle}
+							className={
+								currentRoute === link.url
+									? style.activeStyle
+									: style.nonActiveStyle
+							}
+							aria-label={link.title}>
 							{link.title}
-						</Link>
+						</Linked>
 					</li>
 				))}
 			</ul>
 		</nav>
 	);
 };
+
 export default NavBar;

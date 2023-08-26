@@ -5,18 +5,18 @@ interface ILinkNav {
 export const ILinkNav: ILinkNav[] = [
 	{
 		title: 'Главная',
-		url: './',
+		url: '/',
 	},
 	{
 		title: 'Обучающие циклы',
-		url: './Sale',
+		url: '/Sale',
 	},
 	{
 		title: 'Информация',
-		url: './Information',
+		url: '/Information',
 	},
 	{
 		title: 'Новости',
-		url: './News',
+		url: '/News',
 	},
 ];

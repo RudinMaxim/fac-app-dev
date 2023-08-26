@@ -1,7 +1,7 @@
 import React from 'react';
 import style from '../Store.module.scss';
-import Input from '@/components/InputSearch/Input';
-
+import { Input } from '@/UI/exportUI';
+import { FaSistrix } from 'react-icons/fa';
 interface Ifiltration {
 	value: string;
 	onChange: (value: string) => void;
@@ -18,13 +18,13 @@ export default function Filtration({ value, onChange }: Ifiltration) {
 		<div className={style.Filtration}>
 			<Input
 				value={value}
-				// @ts-ignore
 				onChange={handleInputChange}
 				label={'Поиск'}
 				placeholder={'Поиск...'}
 				type={'text'}
-				name={'SerchSale'}
-			/>
+				name={'SerchSale'}>
+				<FaSistrix />
+			</Input>
 		</div>
 	);
 }

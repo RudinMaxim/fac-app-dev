@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Popup.module.scss';
 import { FaTimes } from 'react-icons/fa';
+import { Button } from '@/UI/exportUI';
 
 interface PopupWindowProps {
 	isOpen: boolean;
@@ -27,9 +28,12 @@ const PopupWindow: React.FC<PopupWindowProps> = ({
 			<div className={style.popup_content}>
 				<div className={style.topBar}>
 					<h3>{title}</h3>
-					<button className={style.close_button} onClick={onClose}>
+					<Button
+						className={style.close_button}
+						onClick={onClose}
+						shape='square'>
 						<FaTimes size={25} />
-					</button>
+					</Button>
 				</div>
 				{children}
 			</div>

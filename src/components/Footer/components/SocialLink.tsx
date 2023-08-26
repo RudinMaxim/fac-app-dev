@@ -5,6 +5,7 @@ import style from '../Footer.module.scss';
 export default function SocialLink() {
 	return (
 		<div className={style.SocialLink}>
+			<h3>Ссылки:</h3>
 			<ul>
 				{LinkSocial.map((link, index) => (
 					<li key={index}>

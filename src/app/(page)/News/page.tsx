@@ -1,3 +1,8 @@
+import { NewsSection } from '@/modules/exportModules';
 export default function News() {
-	return <main>News</main>;
+	return (
+		<main>
+			<NewsSection />
+		</main>
+	);
 }

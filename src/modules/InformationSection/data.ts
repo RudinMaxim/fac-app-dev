@@ -16,4 +16,8 @@ interface Information {
 	];
 }
 
-export const Information: Information[] = [{}];
+export const Information: Information[] = [
+	{
+		title: 'Положение об аккредитации специалистов',
+	},
+];

@@ -2,15 +2,8 @@
 	position: fixed;
 	bottom: 2rem;
 	right: 2rem;
-	background-color: var(--main-color-red);
-	color: var(--bg-color-light);
-	border: none;
-	border-radius: 50%;
-	padding: 1rem;
-	text-align: center;
-	cursor: pointer;
 	opacity: 0;
-	transition: opacity 0.3s ease-in-out;
+	transition: opacity var(--transition);
 
 	&.visible {
 		opacity: 1;

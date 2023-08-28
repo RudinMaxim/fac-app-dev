@@ -1,7 +1,6 @@
 import React from 'react';
 import style from '../Store.module.scss';
 import { Input } from '@/UI/exportUI';
-import { FaSistrix } from 'react-icons/fa';
 interface Ifiltration {
 	value: string;
 	onChange: (value: string) => void;
@@ -22,9 +21,8 @@ export default function Filtration({ value, onChange }: Ifiltration) {
 				label={'Поиск'}
 				placeholder={'Поиск...'}
 				type={'text'}
-				name={'SerchSale'}>
-				<FaSistrix />
-			</Input>
+				name={'SerchSale'}
+			/>
 		</div>
 	);
 }

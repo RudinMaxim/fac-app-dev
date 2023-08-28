@@ -19,7 +19,6 @@ export const Input: FC<InputProps> = ({
 	type,
 	required = true,
 	name,
-	chidren,
 }) => {
 	return (
 		<div className={style.inputContainer}>
@@ -32,9 +31,6 @@ export const Input: FC<InputProps> = ({
 				required={required}
 				name={name}
 			/>
-			<label className={style.inputLabel} htmlFor={name}>
-				{chidren}
-			</label>
 		</div>
 	);
 };

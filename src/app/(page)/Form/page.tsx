@@ -1,3 +1,8 @@
+import { Connect } from '@/modules/exportModules';
 export default function Form() {
-	return <div>Form</div>;
+	return (
+		<main>
+			<Connect />
+		</main>
+	);
 }

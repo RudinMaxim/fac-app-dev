@@ -1,9 +1,6 @@
 .AboutSection {
-	box-shadow: var(--box-shadow);
-	border-radius: var(--border-radius);
 	padding: 1rem 2rem;
-	background-color: var(--bg-color);
-
+	box-shadow: var(--box-shadow);
 	h2,
 	h3 {
 		color: var(--text-color);
@@ -46,12 +43,6 @@
 
 		h4 {
 			margin-bottom: 0.5rem;
-		}
-		&:last-child {
-			margin-right: 0;
-		}
-		&:first-child {
-			margin-left: 0;
 		}
 	}
 }
@@ -166,21 +157,30 @@
 	.cardList {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: space-between;
 		gap: 2rem;
 	}
 	.card {
 		position: relative;
-		box-shadow: var(--box-shadow);
-		border-radius: var(--border-radius);
-		max-width: 350px;
+		width: 30%;
 		height: max-content;
 
+		border-radius: var(--border-radius);
+		margin-bottom: 1rem;
+		box-shadow: var(--box-shadow);
+		transition: var(--transition);
+		background-color: var(--bg-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+
 		img {
+			position: relative;
 			border-radius: 10px 10px 0 0;
 			min-height: 350px;
+			max-width: 350px;
 			width: 100%;
-			z-index: 100;
 		}
 
 		.experience {
@@ -259,8 +259,17 @@
 	.showButton {
 		background: none;
 		cursor: pointer;
+		color: var(--primary-color);
 	}
 }
+@media screen and (max-width: 954px) {
+	.Employees {
+		.card {
+			width: 100%;
+		}
+	}
+}
+
 .Question {
 	svg {
 		display: flex;
@@ -269,7 +278,7 @@
 		margin-right: 1rem;
 		height: 1.5rem;
 		width: 1.5rem;
-		transition: var(transition);
+		transition: var(--transition);
 
 		path {
 			fill: var(--primary-color);
@@ -282,6 +291,7 @@
 		background-color: var(--bg-color);
 		box-shadow: var(--box-shadow);
 		border-radius: var(--border-radius);
+		color: var(--text-color);
 		cursor: pointer;
 
 		.title {
@@ -291,6 +301,16 @@
 			color: var(--text-color);
 			font-weight: 600;
 			min-height: 50px;
+		}
+		.answer {
+			margin-top: 1rem;
+		}
+	}
+}
+@media screen and (max-width: 954px) {
+	.Question {
+		li {
+			font-size: 1rem;
 		}
 	}
 }

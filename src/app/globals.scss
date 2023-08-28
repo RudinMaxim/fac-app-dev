@@ -10,7 +10,7 @@
 	--transition: 0.3s ease-in-out;
 
 	[data-theme='dark'] {
-		--primary-color: #757676;
+		--primary-color: #939f9f;
 		--secondary-color: #b62f45;
 		--bg-color: #212529;
 		--text-color: #f8f9fa;
@@ -19,7 +19,7 @@
 	--swiper-theme-color: var(--primary-color) !important;
 
 	::selection {
-		background: var(--text-color);
+		background: var(--secondary-color);
 	}
 	::-webkit-scrollbar {
 		width: 0;
@@ -38,6 +38,11 @@ html {
 	max-width: var(--max-width);
 	margin: 0 auto;
 	padding: 0px 8px;
+	border-radius: var(--border-radius);
+	background-color: var(--bg-color);
+	&:last-child {
+		box-shadow: none;
+	}
 }
 
 section {

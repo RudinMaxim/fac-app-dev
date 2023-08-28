@@ -30,7 +30,7 @@ export default function Question(): React.JSX.Element {
 					<li key={index}>
 						<div className={style.title} onClick={() => toggleCollapse(index)}>
 							<span>{isOpen[index] ? <FaMinus /> : <FaPlus />}</span>
-							{question.question}
+							<p>{question.question}</p>
 						</div>
 						{isOpen[index] && <p className={style.answer}>{question.answer}</p>}
 					</li>

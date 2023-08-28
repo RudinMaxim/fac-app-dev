@@ -6,7 +6,7 @@ import { LogoBig, LogoSmell } from '../../assets/image';
 import Image from 'next/image';
 import style from './Header.module.scss';
 import NavBar from './components/NavBar';
-import { Linked } from '@/UI/exportUI';
+import { Button, Linked } from '@/UI/exportUI';
 
 export default function Header(): React.JSX.Element {
 	const [isMenuOpen, setMenuOpen] = useState(false);
@@ -17,17 +17,17 @@ export default function Header(): React.JSX.Element {
 	};
 
 	useEffect(() => {
-		document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+		if (isMobile == true) {
+			document.body.style.overflow = isMenuOpen ? 'hidden' : 'visible';
+		}
 		return () => {
-			document.body.style.overflow = 'auto';
+			document.body.style.overflow = 'visible';
 		};
-	}, [isMobile, isMenuOpen]);
+	}, [isMenuOpen, isMobile]);
 
 	return (
 		<>
-			<header
-				className={style.Header}
-				style={{ overflow: isMenuOpen ? 'hidden' : 'visible' }}>
+			<header className={style.Header}>
 				<div className='container'>
 					<div className={style.HeaderInner}>
 						{isMobile ? (
@@ -60,10 +60,7 @@ export default function Header(): React.JSX.Element {
 								<NavBar onMenuToggle={handleMenuClick} />
 
 								<div className={style.Linked_inner}>
-									<Linked
-										href={'./#Contact'}
-										onClick={handleMenuClick}
-										type='button'>
+									<Linked href={'./Form'} type='button'>
 										Связаться с нами
 									</Linked>
 								</div>
@@ -79,7 +76,7 @@ export default function Header(): React.JSX.Element {
 
 					<NavBar onMenuToggle={handleMenuClick} />
 
-					<Linked href={'./#Contact'} type='button' onClick={handleMenuClick}>
+					<Linked href={'./Form'} type='button' onClick={handleMenuClick}>
 						Связаться с нами
 					</Linked>
 				</div>

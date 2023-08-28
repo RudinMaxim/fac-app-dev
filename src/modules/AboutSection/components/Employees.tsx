@@ -6,7 +6,7 @@ import { employees } from '../data';
 import { ExperienceCounter } from '../utils/ExperienceCounter';
 import { ReadMore } from '../utils/ReadMore';
 import { FaCertificate } from 'react-icons/fa';
-import { Linked } from '@/UI/exportUI';
+import { Button, Linked } from '@/UI/exportUI';
 
 export default function Employees(): React.JSX.Element {
 	const [page, setPage] = useState(6);
@@ -50,9 +50,9 @@ export default function Employees(): React.JSX.Element {
 
 			{page < employees.length && (
 				<div className={style.showMoreInner}>
-					<button onClick={showMore} className={style.showMore}>
+					<Button onClick={showMore} type='button'>
 						Показать еще
-					</button>
+					</Button>
 				</div>
 			)}
 		</div>

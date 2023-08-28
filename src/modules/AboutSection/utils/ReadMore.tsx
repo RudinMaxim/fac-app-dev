@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import style from '../AboutSection.module.scss';
+import { Button } from '@/UI/exportUI';
 
 interface Props {
 	text: string;
@@ -20,12 +21,9 @@ export const ReadMore: React.FC<Props> = ({ text, maxLength }) => {
 		<>
 			<p className={style.info}>{displayText}</p>
 			{text.length > maxLength && (
-				<button
-					type='button'
-					onClick={toggleShowFullText}
-					className={style.showButton}>
-					{showFullText ? 'Свернуть' : 'Читать дальше'}
-				</button>
+				<Button onClick={toggleShowFullText} className={style.showButton}>
+					{showFullText ? 'Свернуть' : 'Читать дальше..'}
+				</Button>
 			)}
 		</>
 	);

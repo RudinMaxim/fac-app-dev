@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react';
 import style from '../Store.module.scss';
 import { IGoods } from '../data';
 import PopupWindow from '@/components/Popup/Popup';
-import { FaAngleRight, FaRegCopy } from 'react-icons/fa';
+import {
+	FaAngleRight,
+	FaArrowRight,
+	FaCaretRight,
+	FaRegCopy,
+} from 'react-icons/fa';
 import Link from 'next/link';
 
 interface GoodsListProps {
@@ -116,15 +121,7 @@ export default function ItemList({
 								</ul>
 
 								<div className={style.conect}>
-									Вопросы можно задать по электронной почте:{' '}
-									<Link href={'mailto:sim-center@psma.ru'} target='_blank'>
-										sim-center@psma.ru
-									</Link>{' '}
-									с темой письма &#171;Вопрос по курсу&#187; или в{' '}
-									<Link href={'https://vk.me/fca_perm'} target='_blank'>
-										Группе Вконтакте
-									</Link>
-									.
+									<Link href={'/Form'}>Подать заявку на обучение!</Link>
 								</div>
 							</div>
 						</div>

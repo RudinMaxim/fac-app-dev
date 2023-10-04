@@ -22,8 +22,8 @@ export default function Employees(): React.JSX.Element {
 						<ExperienceCounter startYear={employee.experiencestartDate} />
 						<Image
 							src={employee.photo}
-							height={400}
-							width={200}
+							height={600}
+							width={400}
 							alt={`Фото ${employee.name} - ${employee.position}`}
 						/>
 

@@ -61,7 +61,7 @@ export default function Header(): React.JSX.Element {
 
 								<div className={style.Linked_inner}>
 									<Linked href={'./Form'} type='button'>
-										Связаться с нами
+										Связаться
 									</Linked>
 								</div>
 							</>
@@ -77,7 +77,7 @@ export default function Header(): React.JSX.Element {
 					<NavBar onMenuToggle={handleMenuClick} />
 
 					<Linked href={'./Form'} type='button' onClick={handleMenuClick}>
-						Связаться с нами
+						Связаться
 					</Linked>
 				</div>
 			)}

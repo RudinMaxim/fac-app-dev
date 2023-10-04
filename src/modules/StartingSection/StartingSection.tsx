@@ -21,7 +21,7 @@ export default function StartingSection(): React.JSX.Element {
 				<div className={style.cardList}>
 					<div className={style.card}>
 						<span>
-							<FaUserGraduate /> 1000+
+							<FaUserGraduate /> 5000+
 						</span>
 						<p>Ежегодно обучаются</p>
 					</div>

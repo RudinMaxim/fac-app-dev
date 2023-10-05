@@ -15,8 +15,8 @@ interface MailOptions {
 	html?: string;
 }
 
-const EMAIL = process.env.EMAIL;
-const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+const EMAIL = "facpgmu@gmail.com"
+const EMAIL_PASSWORD = "qpwoecj3j138cjcj22";
 if (!EMAIL || !EMAIL_PASSWORD) {
 	console.log('none env');
 	throw new Error('Email credentials not provided');

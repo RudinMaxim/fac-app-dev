@@ -3,8 +3,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Button, Input } from '@/UI/exportUI';
+import style from '../ConnectForm.module.scss';
 import { topics } from '../data';
 import { Toaster, toast } from 'sonner';
+import { FaRegCheckCircle } from 'react-icons/fa';
 
 type FormData = {
 	name: string;
@@ -20,6 +22,9 @@ const schema = yup.object().shape({
 	subject: yup.string().required(),
 });
 
+let lastSentTime = 0;
+let sentCount = 0;
+
 export const ContactForm = () => {
 	const {
 		register,
@@ -31,6 +36,18 @@ export const ContactForm = () => {
 
 	const onSubmit = async (data: FormData) => {
 		try {
+			const currentTime = new Date().getTime();
+			if (sentCount >= 5) {
+				toast.error('Превышено количество отправленных писем');
+				return;
+			} else if (currentTime - lastSentTime < 60000) {
+				toast.error('Слишком частая отправка сообщений');
+				return;
+			} else {
+				sentCount++;
+				lastSentTime = currentTime;
+			}
+
 			await fetch('/api/mail', {
 				method: 'POST',
 				headers: {
@@ -47,16 +64,27 @@ export const ContactForm = () => {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<label htmlFor='name'>Name:</label>
-				<input id='name' {...register('name')} />
-				{errors.name && <p>{errors.name.message}</p>}
+			<form onSubmit={handleSubmit(onSubmit)} className={style.ContactForm}>
+				<label htmlFor='name'>Как к вам оброщатся:</label>
+				<input
+					id='name'
+					placeholder={`${
+						errors.email ? `Пожалуйста, введите как вас зовут!` : `Ваше ФИО`
+					}`}
+					{...register('name')}
+				/>
 
-				<label htmlFor='email'>Email:</label>
-				<input id='email' {...register('email')} />
-				{errors.email && <p>{errors.email.message}</p>}
+				<label htmlFor='email'>Ваша почта:</label>
+				<input
+					id='email'
+					placeholder={`${
+						errors.email ? `Пожалуйста, введите правльно почту!` : `Ваша почта`
+					}`}
+					{...register('email')}
+				/>
 
-				<select {...register('subject')}>
+				<label htmlFor='message'>Выберите тему письма:</label>
+				<select id='subject' {...register('subject')}>
 					<>
 						<option value='' selected disabled hidden>
 							Выбрать тему
@@ -69,12 +97,20 @@ export const ContactForm = () => {
 					</>
 				</select>
 
-				<label htmlFor='message'>Message:</label>
-				<input id='message' {...register('message')} />
-				{errors.message && <p>{errors.message.message}</p>}
+				<label htmlFor='message'>Ваше сообщение:</label>
+				<textarea
+					id='message'
+					placeholder={`${
+						errors.message
+							? `Пожалуйста, введите ваше сообщение!`
+							: `Ваше сообщение`
+					}`}
+					{...register('message')}
+				/>
 
-				<Button type='submit'>Submit</Button>
+				<Button type='submit'>Отправить</Button>
 			</form>
+
 			<Toaster richColors />
 		</>
 	);

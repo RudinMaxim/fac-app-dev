@@ -14,7 +14,6 @@ type FormData = {
 	message: string;
 	subject: string;
 };
-
 const schema = yup.object().shape({
 	name: yup.string().required(),
 	email: yup.string().email().required(),
@@ -37,11 +36,14 @@ export const ContactForm = () => {
 	const onSubmit = async (data: FormData) => {
 		try {
 			const currentTime = new Date().getTime();
+
 			if (sentCount >= 5) {
-				toast.error('Превышено количество отправленных писем');
+				toast.error(
+					'Превышено количество отправленных писем, попробуйте позже'
+				);
 				return;
 			} else if (currentTime - lastSentTime < 60000) {
-				toast.error('Слишком частая отправка сообщений');
+				toast.error('Слишком частая отправка сообщений!');
 				return;
 			} else {
 				sentCount++;
@@ -56,7 +58,7 @@ export const ContactForm = () => {
 				body: JSON.stringify(data),
 			});
 
-			toast.success('Успешно!');
+			toast.success(`${data.name}, выша заявка успешно отправлена	`);
 		} catch (error) {
 			toast.error(`Не успешно, ошибка: ${error}`);
 		}
@@ -69,7 +71,7 @@ export const ContactForm = () => {
 				<input
 					id='name'
 					placeholder={`${
-						errors.email ? `Пожалуйста, введите как вас зовут!` : `Ваше ФИО`
+						errors.name ? `Пожалуйста, введите как вас зовут!` : `Ваше ФИО`
 					}`}
 					{...register('name')}
 				/>
@@ -78,7 +80,9 @@ export const ContactForm = () => {
 				<input
 					id='email'
 					placeholder={`${
-						errors.email ? `Пожалуйста, введите правльно почту!` : `Ваша почта`
+						errors.email
+							? `Пожалуйста, введите правльно почту!`
+							: `Ваша электронная почта`
 					}`}
 					{...register('email')}
 				/>

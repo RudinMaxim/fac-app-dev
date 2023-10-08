@@ -7,7 +7,6 @@ interface MailData {
 	subject: string;
 	message: string;
 }
-
 interface MailOptions {
 	from: string;
 	to: string;
@@ -16,12 +15,10 @@ interface MailOptions {
 	html?: string;
 }
 
-// const EMAIL = process.env.EMAIL;
-const EMAIL = 'facpgmu@gmail.com';
-// const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
-const EMAIL_PASSWORD = 'qpwoecj3j138cjcj22';
-
+const EMAIL = process.env.EMAIL;
+const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
 if (!EMAIL || !EMAIL_PASSWORD) {
+	console.log('none env');
 	throw new Error('Email credentials not provided');
 }
 
@@ -31,14 +28,8 @@ const transporter: Transporter = nodemailer.createTransport({
 		user: EMAIL,
 		pass: EMAIL_PASSWORD,
 	},
+	secure: false,
 });
-
-const CONTACT_FIELDS = {
-	name: 'Name',
-	email: 'Email',
-	subject: 'Subject',
-	message: 'Message',
-};
 
 const generateEmailContent = (data: MailData) => {
 	let html = `
@@ -185,31 +176,35 @@ const generateEmailContent = (data: MailData) => {
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-	const mailData: MailData = req.body;
+	const { name, email, subject, message }: MailData = req.body;
 
-	if (
-		!mailData ||
-		!mailData.name ||
-		!mailData.email ||
-		!mailData.subject ||
-		!mailData.message
-	) {
+	const mailData = {
+		from: email,
+		to: email,
+		subject: `Сообщение от ${name}, на тему ${subject}`,
+		text: `${message} | Sent from: ${email}`,
+		html: `<div>${message}</div><p>Sent from: ${email}</p>`,
+	};
+
+	if (!name || !email || !subject || !message) {
 		return res.status(400).send({ message: 'Bad request' });
 	}
 
-	try {
-		await transporter.sendMail({
-			from: EMAIL,
-			to: EMAIL,
-			...generateEmailContent(mailData),
-			subject: mailData.subject,
-		} as MailOptions);
+	await new Promise((resolve, reject) => {
+		transporter.sendMail(mailData, (err: Error | null, info) => {
+			if (err) {
+				reject(err);
+				return res
+					.status(500)
+					.json({ error: err.message || 'Something went wrong' });
+			} else {
+				resolve(info.accepted);
+				res.status(200).json({ message: 'Message sent!' });
+			}
+		});
+	});
 
-		return res.status(200).json({ success: true });
-	} catch (error) {
-		console.log(error);
-		return res.status(400).json({ message: error });
-	}
+	return;
 };
 
 export default handler;

@@ -1,5 +1,4 @@
 .Store {
-	box-shadow: var(--box-shadow);
 	border-radius: var(--border-radius);
 	padding: 2rem 3rem;
 	background-color: var(--bg-color);
@@ -25,7 +24,7 @@
 
 	.Card {
 		position: relative;
-		width: 350px;
+		width: 31%;
 		min-height: 300px;
 		border-radius: var(--border-radius);
 		padding: 1rem 2rem;

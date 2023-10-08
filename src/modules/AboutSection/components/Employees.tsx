@@ -7,9 +7,11 @@ import { ExperienceCounter } from '../utils/ExperienceCounter';
 import { ReadMore } from '../utils/ReadMore';
 import { FaCertificate } from 'react-icons/fa';
 import { Button, Linked } from '@/UI/exportUI';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Employees(): React.JSX.Element {
 	const [page, setPage] = useState(6);
+	const isMobile: boolean = useMediaQuery({ maxWidth: 768 });
 
 	const showMore = () => setPage(page + 3);
 
@@ -21,9 +23,9 @@ export default function Employees(): React.JSX.Element {
 					<div key={index} className={style.card}>
 						<ExperienceCounter startYear={employee.experiencestartDate} />
 						<Image
+							width={isMobile ? 300 : 400}
+							height={400}
 							src={employee.photo}
-							height={600}
-							width={400}
 							alt={`Фото ${employee.name} - ${employee.position}`}
 						/>
 

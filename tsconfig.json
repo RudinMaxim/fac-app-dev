@@ -29,7 +29,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"src/app/api/mail.ts"
+		"src/app/api/mail/mail.ts"
 	],
 	"exclude": ["node_modules"]
 }

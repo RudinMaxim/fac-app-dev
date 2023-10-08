@@ -7,6 +7,7 @@ import style from '../ConnectForm.module.scss';
 import { topics } from '../data';
 import { Toaster, toast } from 'sonner';
 import { FaRegCheckCircle } from 'react-icons/fa';
+import { useState } from 'react';
 
 type FormData = {
 	name: string;
@@ -57,6 +58,8 @@ export const ContactForm = () => {
 				},
 				body: JSON.stringify(data),
 			});
+
+			console.log(data);
 
 			toast.success(`${data.name}, выша заявка успешно отправлена	`);
 		} catch (error) {

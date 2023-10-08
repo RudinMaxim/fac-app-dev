@@ -1,6 +1,6 @@
 import LogoBig from './image/LogoBig.png';
 import LogoSmell from './image/LogoSmell.png';
-import StartingSectionImage from './image/StartingSectionImage.png';
+import team from './image/team.jpg';
 
 // import Employees from './image/Employees/nxptPzbzpDg.png';
 
@@ -12,10 +12,10 @@ import pattern4 from './image/pattern/patterns4.png';
 export {
 	LogoBig,
 	LogoSmell,
-	StartingSectionImage,
 	// Employees,
 	pattern1,
 	pattern2,
 	pattern3,
 	pattern4,
+	team,
 };

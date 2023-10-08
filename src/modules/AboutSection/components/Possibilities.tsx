@@ -27,7 +27,7 @@ export default function Possibilities(): React.JSX.Element {
 			<Swiper
 				className={style.cardList}
 				modules={[Pagination, A11y]}
-				spaceBetween={isMobile ? 3 : 1}
+				spaceBetween={isMobile ? 3 : 20}
 				slidesPerView={isMobile ? 1 : 3}
 				pagination={{ clickable: true }}>
 				{possibilities.map((date, index) => (

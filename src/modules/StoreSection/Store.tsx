@@ -47,7 +47,7 @@ export default function Store(): React.JSX.Element {
 	}, [searchQuery]);
 
 	return (
-		<div className='container'>
+		<div className=''>
 			<section className={style.Store}>
 				<h1>Обучающие циклы</h1>
 				<Filtration value={query} onChange={handleQueryChange} />

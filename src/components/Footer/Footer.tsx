@@ -27,7 +27,7 @@ export default function Footer() {
 							<h3>Адрес:</h3>
 							<ul>
 								<li>
-									<address>г. Пермь, ул. Попова, 7/Монастырская, 83</address>
+									<address>г. Пермь, ул. Попова, 7/<br/>Монастырская, 83</address>
 								</li>
 								<li>
 									<address>г. Пермь, ул. Луначарского, 72</address>

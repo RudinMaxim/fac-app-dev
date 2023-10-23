@@ -27,13 +27,13 @@ export default function StartingSection(): React.JSX.Element {
 					</div>
 					<div className={style.card}>
 						<span>
-							<FaRobot /> 20+
+							<FaRobot /> 200+
 						</span>
 						<p>Симуляторов</p>
 					</div>
 					<div className={style.card}>
 						<span>
-							<FaBookMedical /> 10+
+							<FaBookMedical /> 30+
 						</span>
 						<p>Обучающих циклов</p>
 					</div>

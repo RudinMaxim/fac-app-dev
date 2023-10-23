@@ -6,8 +6,7 @@ import { Button, Input } from '@/UI/exportUI';
 import style from '../ConnectForm.module.scss';
 import { topics } from '../data';
 import { Toaster, toast } from 'sonner';
-import { FaRegCheckCircle } from 'react-icons/fa';
-import { useState } from 'react';
+import axios from 'axios';
 
 type FormData = {
 	name: string;
@@ -51,15 +50,8 @@ export const ContactForm = () => {
 				lastSentTime = currentTime;
 			}
 
-			await fetch('/api/mail', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			});
-
 			console.log(data);
+			await axios.post('/api/mail', data);
 
 			toast.success(`${data.name}, выша заявка успешно отправлена	`);
 		} catch (error) {
@@ -93,7 +85,7 @@ export const ContactForm = () => {
 				<label htmlFor='message'>Выберите тему письма:</label>
 				<select id='subject' {...register('subject')}>
 					<>
-						<option value='' selected disabled hidden>
+						<option defaultValue={''} disabled hidden>
 							Выбрать тему
 						</option>
 						{topics.map((el) => (

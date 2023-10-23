@@ -21,13 +21,15 @@ export default function Employees(): React.JSX.Element {
 			<div className={style.cardList}>
 				{employees.slice(0, page).map((employee, index) => (
 					<div key={index} className={style.card}>
+						<div className={style.cardImage}>
+							<Image
+								width={isMobile ? 300 : 400}
+								height={400}
+								src={employee.photo}
+								alt={`Фото ${employee.name} - ${employee.position}`}
+							/>
+						</div>
 						<ExperienceCounter startYear={employee.experiencestartDate} />
-						<Image
-							width={isMobile ? 300 : 400}
-							height={400}
-							src={employee.photo}
-							alt={`Фото ${employee.name} - ${employee.position}`}
-						/>
 
 						<div className={style.description}>
 							<h4 className={style.title}>{employee.name}</h4>

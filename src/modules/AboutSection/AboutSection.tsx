@@ -1,7 +1,9 @@
-import Image from 'next/image';
 import style from './AboutSection.module.scss';
-import { Possibilities, CompanyHistory, Employees, Question } from './export';
-import { team } from '@/assets/image';
+import CompanyHistory from './components/CompanyHistory';
+import Employees from './components/Employees';
+import Possibilities from './components/Possibilities';
+import Question from './components/Question';
+
 export default function AboutSection(): React.JSX.Element {
 	return (
 		<>

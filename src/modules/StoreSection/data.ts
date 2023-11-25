@@ -5,7 +5,6 @@ export interface IGoods {
 	name: string;
 	time?: number;
 	price: number;
-	// Требования
 	requirements?: string[];
 	formStudy?: string;
 	program: string[];
